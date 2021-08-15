@@ -8,6 +8,7 @@ class Stone {
             restitution: 0.8
         }
         this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, opt)
+        this.image = loadImage("stone.png")
         World.add(world,this.body)
     }
     display() {
@@ -16,8 +17,8 @@ class Stone {
         translate(pos.x, pos.y)
         strokeWeight(1)
         fill("yellow")
-        rectMode(CENTER);
-        rect(0, 0, this.w, this.h);
+        imageMode(CENTER);
+        image(this.image, 0, 0, this.w, this.h)
         noStroke()
         pop();
     }
